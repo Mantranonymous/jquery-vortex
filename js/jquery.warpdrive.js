@@ -28,8 +28,8 @@ THE SOFTWARE.
     function WarpDrive( element, params ) {
 
         var settings = {};
-            settings.width = 480;
-            settings.height = 480;
+            settings.width = 1600;
+            settings.height = 1080;
             settings.autoResize = false;
             settings.autoResizeMinWidth = null;
             settings.autoResizeMaxWidth = null;
@@ -64,7 +64,7 @@ THE SOFTWARE.
             settings.starFollowMouseSensitivity = 0.025;
             settings.starFollowMouseXAxis = true;
             settings.starFollowMouseYAxis = true;
-            
+
         //---
 
         if ( params !== undefined ) {
@@ -171,7 +171,7 @@ THE SOFTWARE.
         var starRotationSpeedMax = settings.starRotationSpeedMax;
         var starRotationAnimationDuration = settings.starRotationAnimationDuration;
         var starRotationAnimationTime = 0;
-        
+
         var starWarpLineLength = settings.starWarpLineLength;
         var starWarpTunnelDiameter = settings.starWarpTunnelDiameter;
         var starFollowMouseSensitivity = settings.starFollowMouseSensitivity;
@@ -211,8 +211,8 @@ THE SOFTWARE.
                 canvas.addEventListener( 'mousemove', mouseMoveHandler, false );
                 canvas.addEventListener( 'mousedown', mouseDownHandler, false );
                 canvas.addEventListener( 'mouseup', mouseUpHandler, false );
-                canvas.addEventListener( 'mouseenter', mouseEnterHandler, false ); 
-                canvas.addEventListener( 'mouseleave', mouseLeaveHandler, false ); 
+                canvas.addEventListener( 'mouseenter', mouseEnterHandler, false );
+                canvas.addEventListener( 'mouseleave', mouseLeaveHandler, false );
 
             }
 
@@ -369,7 +369,7 @@ THE SOFTWARE.
             pix[ i + 1 ] = pix[ i + 1 ] + g;
             pix[ i + 2 ] = pix[ i + 2 ] + b;
             pix[ i + 3 ] = a;
-            
+
         };
 
         //---
@@ -385,8 +385,8 @@ THE SOFTWARE.
             var err = dx - dy;
 
             var lx = x1;
-            var ly = y1;    
-            
+            var ly = y1;
+
             while ( true ) {
 
                 if ( lx > -1 && lx < canvasWidth && ly > -1 && ly < canvasHeight ) {
@@ -400,17 +400,17 @@ THE SOFTWARE.
 
                 var e2 = 2 * err;
 
-                if ( e2 > -dx ) { 
+                if ( e2 > -dx ) {
 
-                    err -= dy; 
-                    lx += sx; 
+                    err -= dy;
+                    lx += sx;
 
                 }
 
-                if ( e2 < dy ) { 
+                if ( e2 < dy ) {
 
-                    err += dx; 
-                    ly += sy; 
+                    err += dx;
+                    ly += sy;
 
                 }
 
@@ -466,7 +466,7 @@ THE SOFTWARE.
             }
 
         };
-        
+
         //---
 
         function getStarPosition( radius, sideLength ) {
@@ -499,7 +499,7 @@ THE SOFTWARE.
                 star.oy = oy;
                 star.x2d = 0;
                 star.y2d = 0;
-          
+
             return star;
 
         };
@@ -612,11 +612,11 @@ THE SOFTWARE.
 
                 starRotationSpeed = Math.easeOutQuad( starRotationAnimationTime, starRotationSpeedMin, starRotationSpeedMax, starRotationAnimationDuration );
                 starRotation -= starRotationSpeed * starRotationDirection;
-                
+
             }
 
             //---
-            
+
             if ( mouseActive ) {
 
                 starSpeedAnimationTime += 1;
@@ -689,10 +689,10 @@ THE SOFTWARE.
 
                 star = starBgHolder[ i ];
 
-                scale = starFov / ( starFov + star.z ); 
-                
-                star.x2d = ( star.x * scale ) + center.x; 
-                star.y2d = ( star.y * scale ) + center.y; 
+                scale = starFov / ( starFov + star.z );
+
+                star.x2d = ( star.x * scale ) + center.x;
+                star.y2d = ( star.y * scale ) + center.y;
 
                 if ( star.x2d > -1 && star.x2d < canvasWidth && star.y2d > -1 && star.y2d < canvasHeight ) {
 
@@ -701,7 +701,7 @@ THE SOFTWARE.
                 }
 
             }
-            
+
             //---
             //stars moving
 
@@ -727,7 +727,7 @@ THE SOFTWARE.
                         star.z = starBorderBack;
                         star.distance = 0;
 
-                    }  
+                    }
 
                 } else {
 
@@ -750,11 +750,11 @@ THE SOFTWARE.
 
                 //---
                 //star position & draw
-                
-                scale = starFov / ( starFov + star.z ); 
-                
-                star.x2d = ( star.x * scale ) + center.x; 
-                star.y2d = ( star.y * scale ) + center.y; 
+
+                scale = starFov / ( starFov + star.z );
+
+                star.x2d = ( star.x * scale ) + center.x;
+                star.y2d = ( star.y * scale ) + center.y;
 
                 if ( starSpeed === starSpeedMin ) {
 
@@ -768,10 +768,10 @@ THE SOFTWARE.
 
                     var nz = star.z + warpSpeedValue;
 
-                    scale = starFov / ( starFov + nz ); 
+                    scale = starFov / ( starFov + nz );
 
-                    var x2d = ( star.x * scale ) + center.x; 
-                    var y2d = ( star.y * scale ) + center.y; 
+                    var x2d = ( star.x * scale ) + center.x;
+                    var y2d = ( star.y * scale ) + center.y;
 
                     if ( x2d > -1 && x2d < canvasWidth && y2d > -1 && y2d < canvasHeight ) {
 
@@ -795,7 +795,7 @@ THE SOFTWARE.
                     star.y = cos * star.oy - sin * star.ox;
 
                 }
-  
+
             }
 
             //---
@@ -887,7 +887,7 @@ THE SOFTWARE.
         function getMousePos( canvas, event ) {
 
             var rect = canvas.getBoundingClientRect();
-            
+
             return { x: event.clientX - rect.left, y: event.clientY - rect.top };
 
         };
@@ -994,7 +994,7 @@ if ( typeof jQuery !== 'undefined' ) {
             } );
 
         };
-        
+
     } ( jQuery ) );
 
 }
