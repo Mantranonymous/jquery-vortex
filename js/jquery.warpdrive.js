@@ -28,7 +28,7 @@ THE SOFTWARE.
     function WarpDrive( element, params ) {
 
         var settings = {};
-            settings.width = 1600;
+            settings.width = 1280;
             settings.height = 1080;
             settings.autoResize = false;
             settings.autoResizeMinWidth = null;

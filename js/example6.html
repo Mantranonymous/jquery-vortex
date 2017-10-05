@@ -26,7 +26,6 @@
             font-size: 100%;
             vertical-align: baseline;
             background: transparent;
-            box-sizing: border-box;
         }
 
         body {
@@ -35,9 +34,16 @@
         }
 
         #holder {
-            position: absolute;
-            width: 480px;
-            height: 480px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          height: 100%;
+          width: 100%;
+          padding: 15px;
+            max-width: 1600px;
+            max-height: 1080px;
+            transform: translateX(-50%) translateY(-50%);
+
         }
 
     </style>
@@ -67,8 +73,8 @@
                 starBgColorRangeMin: 10,
                 starBgColorRangeMax: 40,
                 starColor: { r:0, g:255, b:0 },
-                starColorRangeMin: 70,
-                starColorRangeMax: 100,
+                starColorRangeMin: 30,
+                starColorRangeMax: 300,
                 starfieldBackgroundColor: { r:0, g:0, b:0 },
                 starDirection: 1,
                 starSpeed: 25,
